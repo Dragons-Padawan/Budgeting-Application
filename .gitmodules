@@ -2,3 +2,6 @@
 	url = https://github.com/Dragons-Padawan/Budgeting-Application.git
 [submodule "team-budgeting-app"]
 	url = https://github.com/Dragons-Padawan/Budgeting-Application.git
+[submodule "Budgeting-Application"]
+	path = Budgeting-Application
+	url = https://github.com/Dragons-Padawan/Budgeting-Application.git
