@@ -43,8 +43,8 @@ public class Income {
             System.out.println("Invalid Response: Try Again");
             getIncome();
         }
-        Expences.setExpenses();
-        Expences.setAnnualExpenses();
+        Expenses.setExpenses();
+        Expenses.setAnnualExpenses();
         return annualIncome;
     }
 }
