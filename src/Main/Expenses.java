@@ -3,7 +3,7 @@ package Main;
 import java.util.HashMap;
 
 
-public class Expences {
+public class Expenses {
 
     private static HashMap<String, Double> expenses = new HashMap<>();
     private static double annualExpenses;
