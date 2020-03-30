@@ -1,0 +1,4 @@
+[submodule "Team-Project"]
+	url = https://github.com/Dragons-Padawan/Budgeting-Application.git
+[submodule "team-budgeting-app"]
+	url = https://github.com/Dragons-Padawan/Budgeting-Application.git
