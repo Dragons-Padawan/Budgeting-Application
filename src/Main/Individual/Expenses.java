@@ -30,23 +30,13 @@ public class Expenses {
     public static void setExpenseValues() {
         for (String key: expenses.keySet()) {
             double value = 0.00;
-            System.out.print("\nEnter a value for " + key + "? ");
+            System.out.print("\nEnter a monthly value for " + key + "? ");
             value = Income.input.nextDouble();
             Income.input.nextLine();
             expenses.put(key, (value * 12));
         }
     }
-    //Adding any additional expenses
-    public static void addExpenses() {
-        System.out.print("\nWhat is this new expense called: ");
-        String newExpense = Income.input.nextLine();
-        Income.input.nextLine();
-        System.out.print("\nHow much does the new expense cost monthly? ");
-        double newExpenseCost = Income.input.nextDouble() * 12;
-        Income.input.nextLine();
-        expenses.put(newExpense, newExpenseCost);
-    }
-    //adding together all the expenses to get an annual cost
+    //Calculating the annual cost
     public static void setAnnualExpenses() {
         for (double expense: expenses.values()) {
             annualExpenses += expense;
