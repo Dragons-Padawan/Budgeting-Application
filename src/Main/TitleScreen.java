@@ -11,10 +11,10 @@ public class TitleScreen {
 
     public static void title() throws IOException {
         //Determining whether to run through either an individual or a small business
-        System.out.print("Are you Small Business or Individual? ");
+        System.out.print("Are you Business or Individual? ");
         userType = Income.input.nextLine().toLowerCase();
 
-        if (userType.equals("small business")) {
+        if (userType.equals("business")) {
 
         } else if (userType.equals("individual")) {
             Balance.setBalance();
