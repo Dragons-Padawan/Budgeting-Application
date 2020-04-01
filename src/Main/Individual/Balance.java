@@ -10,7 +10,7 @@ public class Balance {
     private static double balance;
     //Calculating the final annual balance
     public static void setBalance() throws IOException {
-        System.out.println("Do you pay any credit cards? (Y/N)");
+        System.out.println("Do you have any credit cards? (Y/N)");
         char creditChoice = Income.input.next().toUpperCase().charAt(0);
         if (creditChoice == 'Y') {
             CreditCardInterest.Welcome();
