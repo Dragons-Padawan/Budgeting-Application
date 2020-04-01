@@ -7,6 +7,8 @@ import java.nio.file.StandardOpenOption;
 
 public class Balance {
 
+    //finding the currently logged in user
+    private static String userName = System.getProperty("user.name");
     private static double balance;
     //Calculating the final annual balance
     public static void setBalance() throws IOException {
@@ -62,26 +64,26 @@ public class Balance {
         String lineFourteen =  "|\t\tTotal Income\t\t\t| \t$" + Income.getAnnualIncome() + "\t|\t\tTotal Expenses\t\t| \t$" + Expenses.getAnnualExpenses() + "\t|\n";
         String lineFifteen = "|\t\t\t\t\t\t\t\t\t\t\tAnnual Balance\t\t| \t$" + getBalance() + "\t\t|\n";
 
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), boldLine.getBytes(),StandardOpenOption.CREATE, StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), title.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), smallLine.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineOne.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineTwo.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineThree.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineFour.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineFive.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineSix.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineSeven.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineEight.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineNine.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineTen.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineEleven.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineTwelve.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineThirteen.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), boldLine.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineFourteen.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), smallLine.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), lineFifteen.getBytes(), StandardOpenOption.APPEND);
-        Files.write(Paths.get("C:\\Users\\justi\\Projects\\Team Budgeting App\\Budgeting-Application\\src\\Main\\" + filename + ".txt"), boldLine.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), boldLine.getBytes(),StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), title.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), smallLine.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineOne.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineTwo.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineThree.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineFour.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineFive.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineSix.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineSeven.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineEight.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineNine.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineTen.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineEleven.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineTwelve.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineThirteen.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), boldLine.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineFourteen.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), smallLine.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), lineFifteen.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\" + userName + "\\Documents\\" + filename + ".txt"), boldLine.getBytes(), StandardOpenOption.APPEND);
     }
 }
