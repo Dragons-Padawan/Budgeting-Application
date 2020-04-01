@@ -30,7 +30,7 @@ public class Expenses {
     public static void setExpenseValues() {
         for (String key: expenses.keySet()) {
             double value = 0.00;
-            System.out.print("\nEnter a monthly value for " + key + ": ");
+            System.out.print("Enter a monthly value for " + key + ": ");
             value = Income.input.nextDouble();
             Income.input.nextLine();
             expenses.put(key, (value * 12));

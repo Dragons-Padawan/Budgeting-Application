@@ -1,8 +1,6 @@
 package Main.Business;
 
 import Main.Individual.Income;
-
-import java.security.PublicKey;
 import java.util.HashMap;
 
 public class Asset {

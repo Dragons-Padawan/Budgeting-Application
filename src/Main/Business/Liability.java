@@ -31,7 +31,7 @@ public class Liability {
         System.out.println("\t* * * Current Liabilities * * *");
         for (String key: currentLiabilities.keySet()) {
             double value = 0.00;
-            System.out.print("\nEnter the value for " + key + ": ");
+            System.out.print("Enter the value for " + key + ": ");
             value = Income.input.nextDouble();
             Income.input.nextLine();
             currentLiabilities.put(key, value);
