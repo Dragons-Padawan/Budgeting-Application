@@ -1,4 +1,4 @@
-package Main;
+package Main.Individual;
 
 import java.util.Scanner;
 
@@ -31,6 +31,7 @@ public class Income {
     //Asking user a variety of questions
     public static double getIncome() {
         System.out.print("Are you Salary or Hourly? ");
+        input.nextLine();
         String payType = input.nextLine().toLowerCase();
 
         if (payType.equals("salary")) {

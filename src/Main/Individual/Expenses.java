@@ -1,11 +1,10 @@
-package Main;
+package Main.Individual;
 
 import java.util.HashMap;
 
-
 public class Expenses {
-//
-    private static HashMap<String, Double> expenses = new HashMap<>();
+
+    public static HashMap<String, Double> expenses = new HashMap<>();
     private static double annualExpenses;
 
     //setting up the initial expenses
@@ -34,16 +33,6 @@ public class Expenses {
         double newExpenseCost = Income.input.nextDouble() * 12;
         Income.input.nextLine();
         expenses.put(newExpense, newExpenseCost);
-    }
-    //Printing expenses in a formatting
-    public static void getExpenses() {
-        System.out.println("Mortgage: " + expenses.get("Mortgage") + "\nTransportation: " + expenses.get("Transportation"));
-        System.out.println("Electricity: " + expenses.get("Electricity") + "\nGas: " + expenses.get("Gas"));
-        System.out.println("Water: " + expenses.get("Water") + "\nInternet: " + expenses.get("Internet"));
-        System.out.println("Cable: " + expenses.get("Cable") + "\nFood: " + expenses.get("Food"));
-        System.out.println("HealthCare: " + expenses.get("HealthCare") + "\nEntertainment: " + expenses.get("Entertainment"));
-        System.out.println("Clothes: " + expenses.get("Clothes") + "\nEducation: " + expenses.get("Education"));
-        System.out.println("Miscellaneous: " + expenses.get("Miscellaneous") + "\nPersonal Care: " + expenses.get("Personal Care"));
     }
     //adding together all the expenses to get an annual cost
     public static void setAnnualExpenses() {
