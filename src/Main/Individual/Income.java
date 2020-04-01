@@ -45,6 +45,7 @@ public class Income {
             getIncome();
         }
         Expenses.setExpenses();
+        Expenses.setExpenseValues();
         Expenses.setAnnualExpenses();
         return annualIncome;
     }

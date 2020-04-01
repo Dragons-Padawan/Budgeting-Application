@@ -1,5 +1,7 @@
 package Main.Individual;
 
+import com.sun.jdi.Value;
+
 import java.util.HashMap;
 
 public class Expenses {
@@ -9,20 +11,30 @@ public class Expenses {
 
     //setting up the initial expenses
     public static void setExpenses() {
-        expenses.put("Mortgage", 12348.00);
-        expenses.put("Transportation", 9907.20);
-        expenses.put("Electricity", 1212.00);
-        expenses.put("Gas", 1694.28);
-        expenses.put("Water", 477.00);
-        expenses.put("Internet", 794.04);
-        expenses.put("Cable", 1200.00);
-        expenses.put("Food", 6600.00);
-        expenses.put("HealthCare", 6888.00);
-        expenses.put("Entertainment", 2481.96);
-        expenses.put("Clothes", 1932.00);
-        expenses.put("Education", 2496.00);
-        expenses.put("Miscellaneous", 959.04);
-        expenses.put("Personal Care", 707.04);
+        expenses.put("Mortgage", 0.00);
+        expenses.put("Transportation", 0.00);
+        expenses.put("Electricity", 0.00);
+        expenses.put("Gas", 0.00);
+        expenses.put("Water", 0.00);
+        expenses.put("Internet", 0.00);
+        expenses.put("Cable", 0.00);
+        expenses.put("Food", 0.00);
+        expenses.put("HealthCare", 0.00);
+        expenses.put("Entertainment", 0.00);
+        expenses.put("Clothes", 0.00);
+        expenses.put("Education", 0.00);
+        expenses.put("Miscellaneous", 0.00);
+        expenses.put("Personal Care", 0.00);
+        expenses.put("Credit Cards", 0.00);
+    }
+    public static void setExpenseValues() {
+        for (String key: expenses.keySet()) {
+            double value = 0.00;
+            System.out.print("\nEnter a value for " + key + "? ");
+            value = Income.input.nextDouble();
+            Income.input.nextLine();
+            expenses.put(key, (value * 12));
+        }
     }
     //Adding any additional expenses
     public static void addExpenses() {
