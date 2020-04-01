@@ -11,7 +11,10 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 public class BusinessBalance {
-    private static String userName = System.getProperty("user.name");
+    private static String userName = System.getProperty("user.name"),
+            boldLine, smallLine, title, lineOne, lineTwo, lineThree, lineFour,
+            lineFive, lineSix, lineSeven, lineEight, lineNine, lineTen, lineEleven,
+            lineTwelve, lineThirteen, lineFourteen, lineFifteen, lineSixteen;
     private static double assetBalance, liabilityBalance, equityBalance, liabilitiesAndEquity;
     //Calculating the final balance
     public static void runningMethods() throws IOException {
@@ -33,7 +36,6 @@ public class BusinessBalance {
         //Setting the balance
         setBalance();
     }
-
     public static void setBalance() throws IOException {
         assetBalance = Asset.getAssets();
         liabilityBalance = Liability.getLiabilities();
@@ -48,26 +50,29 @@ public class BusinessBalance {
             balanceReturn(fileName);
         }
     //Sending Data to a .txt file w/ full formatting
+    public static void result() {
+        boldLine = "=======================================================================================================================================\n";
+        smallLine = "---------------------------------------------------------------------------------------------------------------------------------------\n";
+        title = "|\t\tAssets\t\t\t|\tAmount\t\t|\t\tLiabilities\t\t|\tAmount\t\t\n";
+        lineOne = "| Checking Account\t\t|\t$" + Income.getAnnualIncome() + "\t| Mortgage\t\t\t\t|\t$" + Expenses.expenses.get("Mortgage") + "\t\n";
+        lineTwo = "| Saving Account\t\t|\t$| Electricity\t\t\t\t| \t$" + Expenses.expenses.get("Electricity") + "\t\t\n";
+        lineThree = "| Petty Cash\t\t|\t$| Gas\t\t\t\t\t| \t$" + Expenses.expenses.get("Gas") + "\t\n";
+        lineFour = "| Accounts Receivable\t\t|\t$| Water\t\t\t\t\t| \t$" + Expenses.expenses.get("Water") + "  \t\n";
+        lineFive = "| Inventory\t\t|\t$| Internet\t\t\t\t| \t$" + Expenses.expenses.get("Internet") + " \t\n";
+        lineSix = "| Pre-Paid Insurance\t\t|\t$| Cable\t\t\t\t\t| \t$" + Expenses.expenses.get("Cable") + " \t\n";
+        lineSeven = "|\tTotal Current Assets\t\t|\t$| Food\t\t\t\t\t| \t$" + Expenses.expenses.get("Food") + " \t\n";
+        lineEight = "| Accumulated Depreciation\t\t|\t$| HealthCare\t\t\t\t| \t$" + Expenses.expenses.get("HealthCare") + " \t\n";
+        lineNine = "| Computer\t\t|\t$| Entertainment\t\t\t\t| \t$" + Expenses.expenses.get("Entertainment") + "\t\n";
+        lineTen = "| Building\t\t|\t$| Clothes\t\t\t\t| \t$" + Expenses.expenses.get("Clothes") + " \t\n";
+        lineEleven = "| Land\t\t|\t$| Education\t\t\t\t| \t$" + Expenses.expenses.get("Education") + " \t\n";
+        lineTwelve = "|\tTotal Non-Current Assets\t\t|\t$| Miscellaneous\t\t\t\t| \t$" + Expenses.expenses.get("Miscellaneous") + " \t\n";
+        lineThirteen = "|\t\t\t\t\t\t|\t\t\t| Personal Care\t\t\t\t| \t$" + Expenses.expenses.get("Personal Care") + " \t\n";
+        lineFourteen = "|\t\tTotal Income\t\t\t| \t$" + Income.getAnnualIncome() + "\t|\t\tTotal Expenses\t\t| \t$" + Expenses.getAnnualExpenses() + "\t\n";
+        lineFifteen = "|\tTotal Assets\t\t|\t$\t\t\t\t\t\tAnnual Balance\t\t| \t$" + Balance.getBalance() + "\t\t\n";
+        lineSixteen = "\n\n";
+    }
     public static void balanceReturn(String filename) throws IOException {
-        String boldLine = "|=======================================================================================================================================|\n";
-        String smallLine = "|---------------------------------------------------------------------------------------------------------------------------------------|\n";
-        String title = "|\t\tAnnual Income\t\t\t|\tAmount\t\t|\t\tAnnual Expenses\t\t|\tAmount\t\t|\n";
-        String lineOne = "| Salary\t\t\t\t\t|\t$" + Income.getAnnualIncome() + "\t| Mortgage\t\t\t\t|\t$" + Expenses.expenses.get("Mortgage") + "\t|\n";
-        String lineTwo = "|\t\t\t\t\t\t|\t\t\t| Electricity\t\t\t\t| \t$" + Expenses.expenses.get("Electricity") + "\t\t|\n";
-        String lineThree = "|\t\t\t\t\t\t|\t\t\t| Gas\t\t\t\t\t| \t$" + Expenses.expenses.get("Gas") + "\t|\n";
-        String lineFour = "|\t\t\t\t\t\t|\t\t\t| Water\t\t\t\t\t| \t$" + Expenses.expenses.get("Water") + "  \t|\n";
-        String lineFive = "|\t\t\t\t\t\t|\t\t\t| Internet\t\t\t\t| \t$" + Expenses.expenses.get("Internet") + " \t|\n";
-        String lineSix = "|\t\t\t\t\t\t|\t\t\t| Cable\t\t\t\t\t| \t$" + Expenses.expenses.get("Cable") + " \t|\n";
-        String lineSeven = "|\t\t\t\t\t\t|\t\t\t| Food\t\t\t\t\t| \t$" + Expenses.expenses.get("Food") + " \t|\n";
-        String lineEight = "|\t\t\t\t\t\t|\t\t\t| HealthCare\t\t\t\t| \t$" + Expenses.expenses.get("HealthCare") + " \t|\n";
-        String lineNine = "|\t\t\t\t\t\t|\t\t\t| Entertainment\t\t\t\t| \t$" + Expenses.expenses.get("Entertainment") + "\t|\n";
-        String lineTen = "|\t\t\t\t\t\t|\t\t\t| Clothes\t\t\t\t| \t$" + Expenses.expenses.get("Clothes") + " \t|\n";
-        String lineEleven = "|\t\t\t\t\t\t|\t\t\t| Education\t\t\t\t| \t$" + Expenses.expenses.get("Education") + " \t|\n";
-        String lineTwelve = "|\t\t\t\t\t\t|\t\t\t| Miscellaneous\t\t\t\t| \t$" + Expenses.expenses.get("Miscellaneous") + " \t|\n";
-        String lineThirteen = "|\t\t\t\t\t\t|\t\t\t| Personal Care\t\t\t\t| \t$" + Expenses.expenses.get("Personal Care") + " \t|\n";
-        String lineFourteen =  "|\t\tTotal Income\t\t\t| \t$" + Income.getAnnualIncome() + "\t|\t\tTotal Expenses\t\t| \t$" + Expenses.getAnnualExpenses() + "\t|\n";
-        String lineFifteen = "|\t\t\t\t\t\t\t\t\t\t\tAnnual Balance\t\t| \t$" + Balance.getBalance() + "\t\t\n";
-
+        result();
         Files.write(Paths.get("C:\\Users\\"+ userName +"\\Documents\\" + filename + ".txt"), boldLine.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         Files.write(Paths.get("C:\\Users\\"+ userName +"\\Documents\\" + filename + ".txt"), title.getBytes(), StandardOpenOption.APPEND);
         Files.write(Paths.get("C:\\Users\\"+ userName +"\\Documents\\" + filename + ".txt"), smallLine.getBytes(), StandardOpenOption.APPEND);
@@ -89,5 +94,7 @@ public class BusinessBalance {
         Files.write(Paths.get("C:\\Users\\"+ userName +"\\Documents\\" + filename + ".txt"), smallLine.getBytes(), StandardOpenOption.APPEND);
         Files.write(Paths.get("C:\\Users\\"+ userName +"\\Documents\\" + filename + ".txt"), lineFifteen.getBytes(), StandardOpenOption.APPEND);
         Files.write(Paths.get("C:\\Users\\"+ userName +"\\Documents\\" + filename + ".txt"), boldLine.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get("C:\\Users\\"+ userName +"\\Documents\\" + filename + ".txt"), lineSixteen.getBytes(), StandardOpenOption.APPEND);
+
     }
 }

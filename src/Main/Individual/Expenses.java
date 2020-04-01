@@ -14,7 +14,7 @@ public class Expenses {
         expenses.put("Mortgage", 0.00);
         expenses.put("Transportation", 0.00);
         expenses.put("Electricity", 0.00);
-        expenses.put("Gas", 0.00);
+        expenses.put("Natural Gas", 0.00);
         expenses.put("Water", 0.00);
         expenses.put("Internet", 0.00);
         expenses.put("Cable", 0.00);
