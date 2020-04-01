@@ -1,5 +1,6 @@
 package Main;
 
+import Main.Business.BusinessBalance;
 import Main.Individual.Balance;
 import Main.Individual.Income;
 
@@ -15,7 +16,7 @@ public class TitleScreen {
         userType = Income.input.nextLine().toLowerCase();
 
         if (userType.equals("business")) {
-
+            BusinessBalance.runningMethods();
         } else if (userType.equals("individual")) {
             Balance.setBalance();
         //Fail safe to ensure that correct type is run
