@@ -47,7 +47,7 @@ public class Balance {
         lineTwelve = "\t\t\t\t\t\t|\t\t\t| Credit Cards\t\t\t\t| \t$" + df.format(Expenses.expenses.get("Credit Cards")) + " \t\n";
         lineThirteen = "\t\t\t\t\t\t|\t\t\t| Miscellaneous\t\t\t\t| \t$" + df.format(Expenses.expenses.get("Miscellaneous")) + " \t\n";
         lineFourteen = "\t\t\t\t\t\t|\t\t\t| Personal Care\t\t\t\t| \t$" + df.format(Expenses.expenses.get("Personal Care")) + " \t\n";
-        lineFifteen = "\t\tTotal Income\t\t\t| \t$" + df.format(Income.getAnnualIncome()) + "\t|\t\tTotal Expenses\t\t| \t$" + df.format(Expenses.getAnnualExpenses()) + "\t\n";
+        lineFifteen = "\t\tTotal Income\t\t\t| \t$" + df.format(Income.getAnnualIncome()) + "\t\t|\t\tTotal Expenses\t\t| \t$" + df.format(Expenses.getAnnualExpenses()) + "\t\n";
         lineSixteen = "\t\t\t\t\t\t\t\t\t\t\tAnnual Balance\t\t| \t$" + df.format(getBalance()) + "\t\t\n";
     }
     public static void balanceReturn(String filename) throws IOException {

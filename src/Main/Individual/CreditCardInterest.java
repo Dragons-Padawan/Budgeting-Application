@@ -5,7 +5,13 @@ public class CreditCardInterest {
     public static double Welcome() {
         //Retrieving APR about the users credit cards
         System.out.println("Please enter your current Credit Card APR");
-        double apr = Income.input.nextDouble() / 100;
+        double apr = Income.input.nextDouble();
+        // Sanitize apr for errors
+        while (apr < 1 || apr > 100){
+            System.out.println("Sorry you must choose a number between 1 and 100. Please try again");
+            apr = Income.input.nextDouble();
+        }
+        apr = apr/100;
         //Retrieving the average Daily Balance
         System.out.println("Please enter your average daily balance");
         double adb = Income.input.nextDouble();
@@ -13,9 +19,8 @@ public class CreditCardInterest {
         double dpr = DailyPeriodRate(apr);
         double di = DailyInterest(dpr, adb);
         double monthlyIR = MonthlyInterestRate(di, 30);
-        double result = (monthlyIR * (adb));
 
-        return result;
+        return monthlyIR;
     }
     //finding the Period Rate
     public static double DailyPeriodRate (double apr){
