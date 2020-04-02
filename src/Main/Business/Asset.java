@@ -7,7 +7,7 @@ public class Asset {
 
     public static HashMap<String, Double> currentAsset = new HashMap<>();
     public static HashMap<String, Double> nonCurrentAsset = new HashMap<>();
-    private static double assets, current = 0.00, nonCurrent = 0.00;
+    public static double assets, current = 0.00, nonCurrent = 0.00;
 
     //Determining the held assets
     public static void setCurrentAsset() {
