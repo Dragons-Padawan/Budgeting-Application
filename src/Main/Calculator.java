@@ -46,6 +46,8 @@ public class Calculator {
         return sum;
     }
 
+    //public static double TimeToPay(){ return }
+
 
 
 }
