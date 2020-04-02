@@ -2,8 +2,7 @@ package Main.Individual;
 
 public class CreditCardInterest {
     //Title Method
-    public static void Welcome() {
-        System.out.println("Welcome to the Credit Card Interest Rate Finder");
+    public static double Welcome() {
         //Retrieving APR about the users credit cards
         System.out.println("Please enter your current Credit Card APR");
         double apr = Income.input.nextDouble();
@@ -14,8 +13,10 @@ public class CreditCardInterest {
         double dpr = DailyPeriodRate(apr);
         double di = DailyInterest(dpr, adb);
         double monthlyIR = MonthlyInterestRate(di, 30);
+        System.out.println(monthlyIR);
+        double result = (monthlyIR * (adb * 30)) * 0.02;
 
-        System.out.println("Your Monthly Interest for your credit card is: " + monthlyIR);
+        return result;
     }
     //finding the Period Rate
     public static double DailyPeriodRate (double apr){

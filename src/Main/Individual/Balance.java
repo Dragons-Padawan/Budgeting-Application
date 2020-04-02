@@ -33,7 +33,7 @@ public class Balance {
         boldLine = "=======================================================================================================================================\n";
         smallLine = "---------------------------------------------------------------------------------------------------------------------------------------\n";
         title = "\t\tAnnual Income\t\t\t|\tAmount\t\t|\t\tAnnual Expenses\t\t|\tAmount\t\t\n";
-        lineOne = " Salary\t\t\t\t\t\t|\t$" + df.format(Income.getAnnualIncome()) + "\t| Mortgage\t\t\t\t|\t$" + df.format(Expenses.expenses.get("Mortgage")) + "\t\n";
+        lineOne = " Salary\t\t\t\t\t\t|\t$" + df.format(Income.getAnnualIncome()) + "\t\t| Mortgage\t\t\t\t|\t$" + df.format(Expenses.expenses.get("Mortgage")) + "\t\n";
         lineTwo = "\t\t\t\t\t\t|\t\t\t| Electricity\t\t\t\t| \t$" + df.format(Expenses.expenses.get("Electricity")) + "\t\t\n";
         lineThree = "\t\t\t\t\t\t|\t\t\t| Natural Gas\t\t\t\t| \t$" + df.format(Expenses.expenses.get("Natural Gas")) + "\t\n";
         lineFour = "\t\t\t\t\t\t|\t\t\t| Water\t\t\t\t\t| \t$" + df.format(Expenses.expenses.get("Water")) + "  \t\n";
