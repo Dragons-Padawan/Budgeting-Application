@@ -28,7 +28,6 @@ public class Expenses {
         expenses.put("Credit Cards", 0.00);
     }
     public static double mortgageValues() {
-        System.out.println(" * * * Monthly Mortgage Calculator * * * ");
         int loanTerm = 0;
         double loanAmount = 0.00, loanRate = 0.00;
 
