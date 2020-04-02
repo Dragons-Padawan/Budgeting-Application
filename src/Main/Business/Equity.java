@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class Equity {
 
     public static HashMap<String, Double> equity = new HashMap<>();
-    private static double equityBalance;
+    public static double equityBalance;
 
     public static void setEquity() {
         equity.put("Owner's Capital", 0.00);

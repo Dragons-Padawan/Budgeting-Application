@@ -8,7 +8,7 @@ public class Liability {
 
     public static HashMap<String, Double> currentLiabilities = new HashMap<>();
     public static HashMap<String, Double> nonCurrentLiabilities = new HashMap<>();
-    private static double liabilities, current = 0.00, nonCurrent = 0.00;
+    public static double liabilities, current = 0.00, nonCurrent = 0.00;
 
     //Setting up the Liabilities for a small business
     public static void setCurrentLiabilities() {
@@ -41,7 +41,7 @@ public class Liability {
         System.out.println("\t* * * NON-Current Liabilities * * *");
         for (String key: nonCurrentLiabilities.keySet()) {
             double value = 0.00;
-            System.out.print("\nEnter the value for " + key + ": ");
+            System.out.print("Enter the value for " + key + ": ");
             value = Income.input.nextDouble();
             Income.input.nextLine();
             currentLiabilities.put(key, value);
