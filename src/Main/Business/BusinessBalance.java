@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.text.DecimalFormat;
 
 public class BusinessBalance {
     private static String userName = System.getProperty("user.name"),
@@ -53,27 +54,28 @@ public class BusinessBalance {
         }
     //Sending Data to a .txt file w/ full formatting
     public static void result() {
+        DecimalFormat df = new DecimalFormat("##.##");
         boldLine = "=======================================================================================================================================\n";
         smallLine = "---------------------------------------------------------------------------------------------------------------------------------------\n";
         title = "|\t\tAssets\t\t\t|\tAmount\t\t|\t\tLiabilities\t\t|\tAmount\t\t\n";
-        lineOne = "| Checking Account\t\t\t|\t$" + Asset.currentAsset.get("Checking Account") + "\t| Accounts Payable\t\t\t\t|\t$" + Liability.currentLiabilities.get("Accounts Payable") + "\t\n";
-        lineTwo = "| Saving Account\t\t\t|\t$" + Asset.currentAsset.get("Saving Account") + "\t| Note Payable\t\t\t\t\t| \t$" + Liability.currentLiabilities.get("Notes Payable") + "\t\t\n";
-        lineThree = "| Petty Cash\t\t\t\t|\t$" + Asset.currentAsset.get("Petty Cash") + "\t| Short-term Loans\t\t\t\t| \t$" + Liability.currentLiabilities.get("Short-Term Loans") + "\t\n";
-        lineFour = "| Accounts Receivable\t\t\t|\t$" + Asset.currentAsset.get("Accounts Receivable") + "\t| Long-Term Debt\t\t\t\t| \t$" + Liability.currentLiabilities.get("Current Portions of Long-Term Debt") + "  \t\n";
-        lineFive = "| Inventory\t\t\t\t|\t$" + Asset.currentAsset.get("Inventory") + "\t| Accrued Expenses\t\t\t\t| \t$" + Liability.currentLiabilities.get("Accrued Expenses") + " \t\n";
-        lineSix = "| Pre-Paid Insurance\t\t\t|\t$" + Asset.currentAsset.get("PrePaid Insurance") + "\t| Unearned Revenue\t\t\t\t| \t$" + Liability.currentLiabilities.get("Unearned Revenue") + " \t\n";
-        lineSeven = "|\tTotal Current Assets\t\t|\t$" + Asset.current + "\t| Other\t\t\t\t\t\t| \t$" + Liability.currentLiabilities.get("Other Short-Term Debts") + " \t\n";
-        lineEight = "| Accumulated Depreciation\t\t|\t$" + Asset.nonCurrentAsset.get("Accumulated Depreciation") + "\t| \tTotal Current Liabilities\t\t| \t$" + Liability.current + " \t\n";
-        lineNine = "| Computer\t\t\t\t|\t$" + Asset.nonCurrentAsset.get("Computer") + "\t| Business Loan 1\t\t\t\t| \t$" + Liability.nonCurrentLiabilities.get("Long-Term Business Loan 1") + "\t\n";
-        lineTen = "| Building\t\t\t\t|\t$" + Asset.nonCurrentAsset.get("Building") + "\t| Business Loan 2\t\t\t\t| \t$" + Liability.nonCurrentLiabilities.get("Long-Term Business Loan 2") + " \t\n";
-        lineEleven = "| Land\t\t\t\t\t|\t$" + Asset.nonCurrentAsset.get("Land") + "\t| Business Loan 3\t\t\t\t| \t$" + Liability.nonCurrentLiabilities.get("Long-Term Business Loan 3") + " \t\n";
-        lineTwelve = "|\tTotal Non-Current Assets\t|\t$" + Asset.nonCurrent + "\t| Business Loan 4\t\t\t\t| \t$" + Liability.nonCurrentLiabilities.get("Long-Term Business Loan 4") + " \t\n";
-        lineThirteen = "|\t\t\t\t\t|\t\t| Business Loan 5\t\t\t\t| \t$" + Liability.nonCurrentLiabilities.get("Long-Term Business Loan 5") + " \t\n";
-        lineFourteen = "|\t\t\t\t\t|\t\t| \tTotal Non-Current Liabilities\t\t| \t$" + Liability.nonCurrent + " \t\n";
-        lineFifteen = "|\t\t\t\t\t|\t\t| Owner's Capital\t\t\t\t| \t$" + Equity.equity.get("Owner's Capital") + " \t\n";
-        lineSixteen = "|\t\t\t\t\t|\t\t| Retained Earnings\t\t\t\t| \t$" + Equity.equity.get("Retained Earnings") + " \t\n";
-        lineSeventeen = "|\tTotal Assets\t\t\t| \t$" + Asset.assets + "\t|\tTotal Equity\t\t\t\t| \t$" + Equity.equityBalance + "\t\n";
-        lineEighteen = "|\t\t\t\t\t\t\t\tLiabilities & Equity\t\t\t| \t$" + liabilitiesAndEquity + "\t\t\n";
+        lineOne = "| Checking Account\t\t\t|\t$" + df.format(Asset.currentAsset.get("Checking Account")) + "\t| Accounts Payable\t\t\t\t|\t$" + df.format(Liability.currentLiabilities.get("Accounts Payable")) + "\t\n";
+        lineTwo = "| Saving Account\t\t\t|\t$" + df.format(Asset.currentAsset.get("Saving Account")) + "\t| Note Payable\t\t\t\t\t| \t$" + df.format(Liability.currentLiabilities.get("Notes Payable")) + "\t\t\n";
+        lineThree = "| Petty Cash\t\t\t\t|\t$" + df.format(Asset.currentAsset.get("Petty Cash")) + "\t| Short-term Loans\t\t\t\t| \t$" + df.format(Liability.currentLiabilities.get("Short-Term Loans")) + "\t\n";
+        lineFour = "| Accounts Receivable\t\t\t|\t$" + df.format(Asset.currentAsset.get("Accounts Receivable")) + "\t| Long-Term Debt\t\t\t\t| \t$" + df.format(Liability.currentLiabilities.get("Current Portions of Long-Term Debt")) + "  \t\n";
+        lineFive = "| Inventory\t\t\t\t|\t$" + df.format(Asset.currentAsset.get("Inventory")) + "\t| Accrued Expenses\t\t\t\t| \t$" + df.format(Liability.currentLiabilities.get("Accrued Expenses")) + " \t\n";
+        lineSix = "| Pre-Paid Insurance\t\t\t|\t$" + df.format(Asset.currentAsset.get("PrePaid Insurance")) + "\t| Unearned Revenue\t\t\t\t| \t$" + df.format(Liability.currentLiabilities.get("Unearned Revenue")) + " \t\n";
+        lineSeven = "|\tTotal Current Assets\t\t|\t$" + df.format(Asset.current) + "\t| Other\t\t\t\t\t\t| \t$" + df.format(Liability.currentLiabilities.get("Other Short-Term Debts")) + " \t\n";
+        lineEight = "| Accumulated Depreciation\t\t|\t$" + df.format(Asset.nonCurrentAsset.get("Accumulated Depreciation")) + "\t| \tTotal Current Liabilities\t\t| \t$" + df.format(Liability.current) + " \t\n";
+        lineNine = "| Computer\t\t\t\t|\t$" + df.format(Asset.nonCurrentAsset.get("Computer")) + "\t| Business Loan 1\t\t\t\t| \t$" + df.format(Liability.nonCurrentLiabilities.get("Long-Term Business Loan 1")) + "\t\n";
+        lineTen = "| Building\t\t\t\t|\t$" + df.format(Asset.nonCurrentAsset.get("Building")) + "\t| Business Loan 2\t\t\t\t| \t$" + df.format(Liability.nonCurrentLiabilities.get("Long-Term Business Loan 2")) + " \t\n";
+        lineEleven = "| Land\t\t\t\t\t|\t$" + df.format(Asset.nonCurrentAsset.get("Land")) + "\t| Business Loan 3\t\t\t\t| \t$" + df.format(Liability.nonCurrentLiabilities.get("Long-Term Business Loan 3")) + " \t\n";
+        lineTwelve = "|\tTotal Non-Current Assets\t|\t$" + df.format(Asset.nonCurrent) + "\t| Business Loan 4\t\t\t\t| \t$" + df.format(Liability.nonCurrentLiabilities.get("Long-Term Business Loan 4")) + " \t\n";
+        lineThirteen = "|\t\t\t\t\t|\t\t| Business Loan 5\t\t\t\t| \t$" + df.format(Liability.nonCurrentLiabilities.get("Long-Term Business Loan 5")) + " \t\n";
+        lineFourteen = "|\t\t\t\t\t|\t\t| \tTotal Non-Current Liabilities\t\t| \t$" + df.format(Liability.nonCurrent) + " \t\n";
+        lineFifteen = "|\t\t\t\t\t|\t\t| Owner's Capital\t\t\t\t| \t$" + df.format(Equity.equity.get("Owner's Capital")) + " \t\n";
+        lineSixteen = "|\t\t\t\t\t|\t\t| Retained Earnings\t\t\t\t| \t$" + df.format(Equity.equity.get("Retained Earnings")) + " \t\n";
+        lineSeventeen = "|\tTotal Assets\t\t\t| \t$" + df.format(Asset.assets) + "\t|\tTotal Equity\t\t\t\t| \t$" + df.format(Equity.equityBalance) + "\t\n";
+        lineEighteen = "|\t\t\t\t\t\t\t\tLiabilities & Equity\t\t\t| \t$" + df.format(liabilitiesAndEquity) + "\t\t\n";
         lineNineteen = "\n\n";
     }
     public static void balanceReturn(String filename) throws IOException {
