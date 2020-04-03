@@ -39,13 +39,16 @@ public class Liability {
     }
     public static void setNonCurrentLiabilitiesValues() {
         System.out.println("\t* * * NON-Current Liabilities * * *");
-        for (String key: nonCurrentLiabilities.keySet()) {
+        int count = 1;
+        do {
             double value = 0.00;
-            System.out.print("Enter the value for " + key + ": ");
+            System.out.print("Enter the value for Long-Term Business Loan " + count + ": ");
             value = Income.input.nextDouble();
             Income.input.nextLine();
-            currentLiabilities.put(key, value);
-        }
+            nonCurrentLiabilities.put("Long-Term Business Loan " + count, value);
+            count++;
+        } while (count < 6);
+
     }
     public static void totalLiabilities() {
         for (double value: currentLiabilities.values()) {
