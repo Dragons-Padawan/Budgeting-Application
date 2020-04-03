@@ -18,7 +18,7 @@ public class CreditCardInterest {
         //Determining how much of the balance the user wants to pay after interest
         double bem;
         do {
-            System.out.print("\nHow much of the balance do you want to pay off each month? ");
+            System.out.print("\nWhat percentage of the principle do you want to pay each month? ");
             bem = Income.input.nextDouble();
             System.out.println();
         } while (bem < 1 || bem > 100);
