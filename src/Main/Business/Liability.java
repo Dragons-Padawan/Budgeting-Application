@@ -1,7 +1,6 @@
 package Main.Business;
 
 import Main.Individual.Income;
-
 import java.util.HashMap;
 
 public class Liability {
